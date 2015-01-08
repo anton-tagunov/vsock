@@ -18,7 +18,7 @@
 	<body ng-app="switchableGrid" ng-controller="SwitchableGridController">
 
 		<div>
-			<a href="#" target="_blank"><img ng-src="logo.jpg" /></a>
+			<a href="#" target="_blank" ng-click="active='home'"><img ng-src="logo.jpg" /></a>
 		</div>
 
 		<nav class="{{active}}" ng-click="$event.preventDefault()">
@@ -48,6 +48,41 @@
 		  </ul>
 
 		</div>
+
+		<!-- Yandex.Metrika informer -->
+		<a href="https://metrika.yandex.ru/stat/?id=27847203&amp;from=informer"
+		target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/27847203/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+		style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:27847203,lang:'ru'});return false}catch(e){}"/></a>
+		<!-- /Yandex.Metrika informer -->
+
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript">
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter27847203 = new Ya.Metrika({id:27847203,
+							webvisor:true,
+							clickmap:true,
+							trackLinks:true,
+							accurateTrackBounce:true,
+							trackHash:true});
+				} catch(e) { }
+			});
+
+			var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
+		</script>
+		<noscript><div><img src="//mc.yandex.ru/watch/27847203" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
 
 		<!-- Include AngularJS from Google's CDN and the resource module -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
