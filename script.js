@@ -20,7 +20,8 @@ app.factory('etsy', function($resource){
 			var api = $resource('https://openapi.etsy.com/v2/shops/vsocks/listings/active.js',{
 				api_key: 'poptvcbpp9zmj8mlh6m6kcjd',
                 includes: 'Images',
-				callback: 'JSON_CALLBACK'
+				callback: 'JSON_CALLBACK',
+				limit: 1000
 			},{
 				// This creates an action which we've chosen to name "fetch". It issues
 				// an JSONP request to the URL of the resource. JSONP requires that the
