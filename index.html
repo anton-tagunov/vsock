@@ -17,31 +17,37 @@
 
 	<body ng-app="switchableGrid" ng-controller="SwitchableGridController">
 
-		<div class="bar">
-
-			<!-- These two buttons switch the layout varaible,
-				 which causes the correct UL to be shown. -->
-
-			<a href="#" class="list-icon" ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"></a>
-			<a href="#" class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
+		<div>
+			<a href="#" target="_blank"><img ng-src="logo.jpg" /></a>
 		</div>
 
-		<!-- We have two layouts. We choose which one to show depending on the "layout" binding -->
+		<nav class="{{active}}" ng-click="$event.preventDefault()">
 
-		<ul ng-show="layout == 'grid'" class="grid">
-			<!-- A view with big photos and no text -->
-			<li ng-repeat="p in pics">
-				<a href="{{p.url}}" target="_blank"><img ng-src="{{p.Images[0].url_fullxfull}}" /></a>
-			</li>
-		</ul>
+			<!-- When a link in the menu is clicked, we set the active variable -->
 
-		<ul ng-show="layout == 'list'" class="list">
-			<!-- A compact view smaller photos and titles -->
-			<li ng-repeat="p in pics">
-				<a href="{{p.url}}" target="_blank"><img ng-src="{{p.Images[0].url_170x135}}" /></a>
-				<p>{{p.title}}</p>
-			</li>
-		</ul>
+			<a href="#" class="home"    ng-click="active='home'">Home</a>
+			<a href="#" class="gallery" ng-click="active='gallery'">Gallery</a>
+			<a href="#" class="contact" ng-click="active='contact'">Contact</a>
+		</nav>
+
+		<div ng-show="active == 'home'">
+		  <h1>My home page</h1>
+		</div>
+
+		<div ng-show="active == 'contact'">
+		  <h1>Contact info:</h1>
+		</div>
+
+		<div ng-show="active == 'gallery'">
+		  <ul class="list">
+			  <!-- A compact view smaller photos and titles -->
+			  <li ng-repeat="p in pics">
+				  <a href="{{p.url}}" target="_blank"><img ng-src="{{p.Images[0].url_170x135}}" /></a>
+				  <p>{{p.title}}</p>
+			  </li>
+		  </ul>
+
+		</div>
 
 		<!-- Include AngularJS from Google's CDN and the resource module -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>

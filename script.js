@@ -46,20 +46,12 @@ function SwitchableGridController($scope, etsy){
 	// Default layout of the app. Clicking the buttons in the toolbar
 	// changes this value.
 
-	$scope.layout = 'grid';
-
 	$scope.pics = [];
+	$scope.active = 'home';
 
 	// Use the etsy service and fetch a list of the popular pics
 	etsy.fetchGoods(function(goods){
-
-		// Assigning the pics array will cause the view
-		// to be automatically redrawn by Angular.
-		var im = goods.map(function(item) {
-			return item;
-		});
-		$scope.pics = im;
-		console.log(im);
+		$scope.pics = goods;
 	});
 
 }
